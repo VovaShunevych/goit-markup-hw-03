@@ -11,7 +11,7 @@
   --main-header-border-bottom: #e7e9fc;
   --main-header-logo-color: #4d5ae5;
   --main-header-logo-studio-color: #2e2f42;
-  --main-header-item-color: #434455;
+  --main-header-item-color: #2e2f42;
   --main-header-link-hover-color: #4d5ae5;
   --main-header-mail-color: #434455;
   --main-header-mail-hover-color: #4d5ae5;
@@ -34,7 +34,7 @@
   --main-filtres-btn-portfolio-hover-color: #ffffff;
   --main-filtres-btn-portfolio-hover-background: #404bbf;
   --main-cards-background: #ffffff;
-  --main-filtres-background: #e5e5e5;
+
   --main-cards-text-border: #e7e9fc;
 }
 p,
@@ -113,7 +113,7 @@ body {
   font-size: 16px;
   line-height: calc(24 / 16);
   letter-spacing: 0.02em;
-  color: var(--main-header-item-color, #434455);
+  color: var(--main-header-item-color, #2e2f42);
 }
 .header-link {
 }
@@ -189,7 +189,7 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
   min-width: 169px;
-  height: 56px;
+  min-height: 56px;
 
   border-radius: 4px;
 }
@@ -259,10 +259,14 @@ body {
 }
 .doing-title-list {
   display: flex;
-  flex-basis: calc(100% / 3-24px);
-  gap: 24px;
+  flex-wrap: wrap;
+  margin-left: -24px;
+  margin-top: -24px;
 }
 .doing-title-item {
+  flex-basis: calc(100% / 3 - 24px);
+  margin-left: 24px;
+  margin-top: 24px;
 }
 /* -------------------------Section 3 ----------------------------------------- */
 /* -------------------------Section 4 ----------------------------------------- */
@@ -271,27 +275,29 @@ body {
   padding-top: 120px;
   background: var(--main-team-background, #f4f4fd);
 }
-.container-team {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 72px;
-}
+
 .team-title {
   font-weight: 700;
   font-size: 36px;
   line-height: calc(40 / 36);
   letter-spacing: 0.02em;
   text-transform: capitalize;
+  text-align: center;
   color: var(--main-sabtitle-color, #2e2f42);
+  margin-bottom: 72px;
 }
 .team-title-list {
   display: flex;
-  flex-basis: calc(100% / 4-32px);
-  gap: 32px;
+  flex-wrap: wrap;
+  margin-left: -24px;
+  margin-top: -24px;
 }
 
 .team-title-item {
+  flex-basis: calc(100% / 4 - 24px);
+  margin-left: 24px;
+  margin-top: 24px;
+
   background: var(--main-team-title-item-background, #ffffff);
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
@@ -299,6 +305,12 @@ body {
   border-radius: 0px 0px 4px 4px;
 }
 
+.team-container-text {
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
 .team-sabtitle {
   font-weight: 500;
   font-size: 20px;
@@ -322,11 +334,7 @@ body {
   padding-top: 100px;
   background: var(--main-footer-background, #2e2f42);
 }
-.container-footer {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
+
 .footer-logo {
   font-family: "Raleway", sans-serif;
   font-style: normal;
@@ -347,6 +355,7 @@ body {
   letter-spacing: 0.02em;
   color: var(--main-footer-text-color, #e7e9fc);
   max-width: 264px;
+  margin-top: 16px;
 }
 /* -------------------------Footer----------------------------------------- */
 /* -------------------------Portfolio Section 1----------------------------------------- */
@@ -368,34 +377,24 @@ body {
 .filtres-btn-portfolio:is(:hover, :focus) {
   color: var(--main-filtres-btn-portfolio-hover-color, #ffffff);
   background: var(--main-filtres-btn-portfolio-hover-background, #404bbf);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .filtres {
   padding-top: 96px;
   padding-bottom: 120px;
+}
 
-  background: var(--main-filtres-background, #e5e5e5);
-}
-.filtres-container {
-  display: flex;
-  flex-direction: column;
-  gap: 72px;
-}
 .filtres-list {
-}
-.filtres-list-container {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
-
   gap: 24px;
 }
-.filtres-item {
+.filtres-list-container {
+  margin-bottom: 72px;
 }
-.cards {
-  background: var(--main-cards-background, #ffffff);
-}
+
 .cards-thumb {
 }
 .cards-text {
@@ -405,16 +404,13 @@ body {
   border: 1px solid var(--main-cards-text-border, #e7e9fc);
 }
 .filter-list-cards {
-  padding: 0;
-  margin: 0;
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
   margin-left: -24px;
   margin-top: -48px;
 }
 .filter-cards-item {
-  flex-basis: calc(100% / 3-24px);
+  flex-basis: calc(100% / 3 - 24px);
   margin-left: 24px;
   margin-top: 48px;
 }
